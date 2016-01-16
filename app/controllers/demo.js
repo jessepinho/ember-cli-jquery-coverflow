@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
   covers: Ember.computed('numberOfCovers', function() {
     var covers = Ember.A([]);
     for (var idx = 1; idx <= this.get('numberOfCovers'); idx++) {
-      covers.push(`#${idx}`);
+      covers.push(idx);
     }
     return covers;
   }),
