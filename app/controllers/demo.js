@@ -1,3 +1,4 @@
+/* global componentHandler */
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
@@ -9,6 +10,12 @@ export default Ember.Controller.extend({
       covers.push(idx);
     }
     return covers;
+  }),
+
+  upgradeDom: Ember.on('init', function() {
+    Ember.run.schedule('afterRender', () => {
+      componentHandler.upgradeDom();
+    });
   }),
 
   // Properties bound to coverflow:
