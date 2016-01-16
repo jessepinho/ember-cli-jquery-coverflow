@@ -4,8 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-cli-jquery-coverflow-site',
     environment: environment,
-    baseURL: '/',
-    locationType: 'auto',
+    baseURL: '/ember-cli-jquery-coverflow',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
