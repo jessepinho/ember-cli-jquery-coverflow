@@ -1,6 +1,6 @@
-# Ember-cli-jquery-coverflow
+# ember-cli-jquery-coverflow
 
-This README outlines the details of collaborating on this Ember addon.
+![Screencap](https://raw.githubusercontent.com/jessepinho/ember-cli-jquery-coverflow/master/screencap.gif)
 
 ## Installation
 
