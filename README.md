@@ -1,6 +1,7 @@
 # ember-cli-jquery-coverflow
 
-![Screencap](https://raw.githubusercontent.com/jessepinho/ember-cli-jquery-coverflow/master/screencap.gif)
+[![Screencap](https://raw.githubusercontent.com/jessepinho/ember-cli-jquery-coverflow/master/screencap.gif)](http://jessepinho.github.io/ember-cli-jquery-coverflow/)
+[Demo](http://jessepinho.github.io/ember-cli-jquery-coverflow/)
 
 ## Installation
 
