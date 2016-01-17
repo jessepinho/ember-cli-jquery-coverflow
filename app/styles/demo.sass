@@ -18,10 +18,19 @@
     height: 100%
     margin: 0
 
-header.mdl-layout__header
-  form
-    align-items: center
-    display: flex
+.demo-config-form
+  display: flex
+  flex-direction: column
+  padding: $grid-phone-gutter
+
+  .mdl-switch
+    margin-bottom: $input-text-vertical-spacing
+
+  @media (min-width: $grid-tablet-breakpoint)
+    padding: $grid-tablet-gutter
+
+  @media (min-width: $grid-desktop-breakpoint)
+    padding: $grid-desktop-gutter
 
 .header-link
   margin-left: 2em
@@ -40,6 +49,17 @@ header.mdl-layout__header
   &.npm
     width: 50px
 
-main
+main.mdl-layout__content
+  display: flex
+  flex-direction: column
   padding: 3em 0
   position: relative
+
+  > .ember-view
+    flex-grow: 1
+
+  footer
+    margin: 0 auto
+    max-width: 400px
+    text-align: center
+    width: 80%

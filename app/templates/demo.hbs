@@ -1,6 +1,7 @@
 <div class="mdl-layout
             mdl-js-layout
-            mdl-layout--fixed-header">
+            mdl-layout--fixed-header
+            mdl-layout--fixed-drawer">
 
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
@@ -8,16 +9,6 @@
         Demo
         <span class="addon-name">ember-cli-jquery-coverflow</span>
       </span>
-      <div class="mdl-layout-spacer"></div>
-
-      <form>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          {{input type="text"
-                  value=numberOfCovers
-                  classNames="mdl-textfield__input"}}
-          <label class="mdl-textfield__label">Number of covers</label>
-        </div>
-      </form>
 
       <div class="mdl-layout-spacer"></div>
 
@@ -31,8 +22,102 @@
     </div>
   </header>
 
+  <div class="mdl-layout__drawer">
+    <form class="demo-config-form">
+      <div class="mdl-tooltip" for="enable-click-label">
+        Disabled due to a bug in jQuery Coverflow
+      </div>
+      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="enable-click" id="enable-click-label">
+        {{input type="checkbox"
+                id="enable-click"
+                class="mdl-switch__input"
+                checked=enableClick
+                disabled=true}}
+        <span class="mdl-switch__label">enableClick</span>
+      </label>
+
+      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="enable-keyboard">
+        {{input type="checkbox"
+                id="enable-keyboard"
+                class="mdl-switch__input"
+                checked=enableKeyboard}}
+        <span class="mdl-switch__label">enableKeyboard</span>
+      </label>
+
+      <div class="mdl-tooltip" for="enable-wheel-label">
+        Disabled due to a bug in jQuery Coverflow
+      </div>
+      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="enable-wheel" id="enable-wheel-label">
+        {{input type="checkbox"
+                id="enable-wheel"
+                class="mdl-switch__input"
+                checked=enableWheel
+                disabled=true}}
+        <span class="mdl-switch__label">enableWheel</span>
+      </label>
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        {{input type="text"
+                value=density
+                classNames="mdl-textfield__input"}}
+        <label class="mdl-textfield__label">density</label>
+      </div>
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        {{input type="text"
+                value=innerAngle
+                classNames="mdl-textfield__input"}}
+        <label class="mdl-textfield__label">innerAngle</label>
+      </div>
+
+      <div class="mdl-tooltip" for="inner-scale-label">
+        Coming to this demo soon!
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="inner-scale-label">
+        {{input type="text"
+                value=innerScale
+                classNames="mdl-textfield__input"
+                disabled=true}}
+        <label class="mdl-textfield__label">innerScale</label>
+      </div>
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        {{input type="text"
+                value=outerAngle
+                classNames="mdl-textfield__input"}}
+        <label class="mdl-textfield__label">outerAngle</label>
+      </div>
+
+      <div class="mdl-tooltip" for="outer-scale-label">
+        Coming to this demo soon!
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="outer-scale-label">
+        {{input type="text"
+                value=outerScale
+                classNames="mdl-textfield__input"
+                disabled=true}}
+        <label class="mdl-textfield__label">outerScale</label>
+      </div>
+
+      <div class="mdl-tooltip" for="index-label">
+        Coming to this demo soon!
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="index-label">
+        {{input type="text"
+                value=index
+                classNames="mdl-textfield__input"
+                disabled=true}}
+        <label class="mdl-textfield__label">index</label>
+      </div>
+    </form>
+  </div>
+
   <main class="mdl-layout__content">
-    {{#jquery-coverflow enableWheel=enableWheel
+    {{#jquery-coverflow density=density
+                        enableClick=enableClick
+                        enableKeyboard=enableKeyboard
+                        enableWheel=enableWheel
+                        index=index
                         innerAngle=innerAngle
                         innerScale=innerScale
                         observeForRefresh=observeForRefresh
@@ -46,5 +131,14 @@
         {{/jquery-coverflow-cover}}
       {{/each}}
     {{/jquery-coverflow}}
+
+    <footer>
+      {{input type="range"
+              class="mdl-slider mdl-js-slider"
+              min="0"
+              max="100"
+              value=numberOfCovers}}
+              <label id="number-of-covers-label">Number of covers: {{numberOfCovers}}</label>
+    </footer>
   </main>
 </div>
