@@ -52,5 +52,14 @@ export default Ember.Controller.extend({
 
   observeForRefresh: Ember.computed(`numberOfCovers,${optionNames.join(',')}`, function() {
     return Date.now();
-  })
+  }),
+
+  actions: {
+    afterCopy() {
+      Ember.$('#copy-code-button').addClass('copy-code-button-copied');
+      setTimeout(function() {
+        Ember.$('#copy-code-button').removeClass('copy-code-button-copied');
+      }, 1000);
+    }
+  }
 });

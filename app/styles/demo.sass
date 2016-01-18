@@ -3,6 +3,30 @@
   font-size: 0.75em
   text-transform: uppercase
 
+#copy-code-button.mdl-button--fab
+  background-color: unquote("rgb(#{$color-primary})")
+  color: unquote("rgb(#{$color-white})")
+  margin-top: -27px // TODO: Use a variable
+  position: absolute
+  right: -27px // TODO: Use a variable
+  transition: background-color .35s
+  z-index: 1
+
+  .check
+    opacity: 0
+
+  &.copy-code-button-copied
+    background-color: unquote("rgb(#{$palette-green-600})")
+
+    .check
+      opacity: 1
+
+    .copy
+      opacity: 0
+
+  .material-icons
+    transition: opacity .35s
+
 .cover
   background: unquote("rgb(#{$color-accent})")
   color: unquote("rgb(#{$color-accent-contrast})")
@@ -21,11 +45,14 @@
 .demo-config
   display: flex
   flex-direction: column
+  overflow-y: visible // Otherwise, the copy button gets cut off
 
   code
     background: unquote("rgb(#{$color-accent})")
-    font-size: .8em
+    font-size: .7em
+    line-height: 1.5em
     padding: $grid-phone-gutter
+    position: relative
 
     pre
       margin: 0

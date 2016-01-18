@@ -25,7 +25,7 @@
   <div class="mdl-layout__drawer demo-config">
     <form>
       <div class="mdl-tooltip" for="enable-click-label">
-        Disabled due to a bug in jQuery Coverflow
+        Coming to this demo soon!
       </div>
       <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="enable-click" id="enable-click-label">
         {{input type="checkbox"
@@ -45,7 +45,7 @@
       </label>
 
       <div class="mdl-tooltip" for="enable-wheel-label">
-        Disabled due to a bug in jQuery Coverflow
+        Coming to this demo soon!
       </div>
       <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="enable-wheel" id="enable-wheel-label">
         {{input type="checkbox"
@@ -111,8 +111,25 @@
       </div>
     </form>
 
+    <div class="mdl-tooltip" for="copy-code-button">
+      Copy code
+    </div>
+    {{#zero-clipboard text="hello, world"
+                      tagName="button"
+                      afterCopy=(action "afterCopy")
+                      cbTarget="demo-code-snippet"
+                      class="mdl-button
+                             mdl-js-button
+                             mdl-button--fab
+                             mdl-js-ripple-effect
+                             mdl-shadow--4dp"
+                      id="copy-code-button"}}
+      <i class="material-icons copy">content_copy</i>
+      <i class="material-icons check">check</i>
+    {{/zero-clipboard}}
+
     <code>
-      <pre>{{partial "partials/demo-code-snippet"}}</pre>
+      <pre id="demo-code-snippet">{{partial "partials/demo-code-snippet"}}</pre>
     </code>
   </div>
 

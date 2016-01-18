@@ -1,15 +1,15 @@
-#jquery-coverflow density={{density}}
-                  enableClick={{enableClick}}
-                  enableKeyboard={{enableKeyboard}}
-                  enableWheel={{enableWheel}}
-                  index={{index}}
-                  innerAngle={{innerAngle}}
-                  innerScale={{innerScale}}
-                  outerAngle={{outerAngle}}
-                  outerScale={{outerScale}}
-  #each myCovers as |myCover|
-    #jquery-coverflow-cover
-      myCover.content
-    /jquery-coverflow-cover
-  /each
-/jquery-coverflow
+\{{#jquery-coverflow density={{density}}
+                    enableClick={{enableClick}}
+                    enableKeyboard={{enableKeyboard}}
+                    enableWheel={{enableWheel}}
+                    index={{index}}
+                    innerAngle={{innerAngle}}
+                    innerScale={{innerScale}}
+                    outerAngle={{outerAngle}}
+                    outerScale={{outerScale}} }}
+  \{{#each myCovers as |myCover|}}
+    \{{#jquery-coverflow-cover}}
+      \{{myCover.content}}
+    \{{/jquery-coverflow-cover}}
+  \{{/each}}
+\{{/jquery-coverflow}}
