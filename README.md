@@ -7,7 +7,7 @@ An Ember component that integrates the excellent [jQuery Coverflow](http://vande
 
 ## Usage
 
-Include the `jquery-coverflow` component in your template as a block. Inside the block, include one `jquery-coverflow-cover` component for each cover you'd like to insert into the coverflow widget.
+Include the `jquery-coverflow` component in your template as a block. Configure it using options from the [jQuery Coverflow docs](http://vanderlee.github.io/coverflow/). Inside the block, include one `jquery-coverflow-cover` component for each cover you'd like to insert into the coverflow widget.
 
 Example:
 
