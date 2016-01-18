@@ -18,19 +18,34 @@
     height: 100%
     margin: 0
 
-.demo-config-form
+.demo-config
   display: flex
   flex-direction: column
-  padding: $grid-phone-gutter
+
+  code
+    background: unquote("rgb(#{$color-accent})")
+    font-size: .8em
+    padding: $grid-phone-gutter
+
+    pre
+      margin: 0
+      overflow-x: auto
+
+  form
+    flex:
+      grow: 1
+      shrink: 1
+    overflow-y: auto
+    padding: $grid-phone-gutter
+
+    @media (min-width: $grid-tablet-breakpoint)
+      padding: $grid-tablet-gutter
+
+    @media (min-width: $grid-desktop-breakpoint)
+      padding: $grid-desktop-gutter
 
   .mdl-switch
     margin-bottom: $input-text-vertical-spacing
-
-  @media (min-width: $grid-tablet-breakpoint)
-    padding: $grid-tablet-gutter
-
-  @media (min-width: $grid-desktop-breakpoint)
-    padding: $grid-desktop-gutter
 
 .header-link
   margin-left: 2em
