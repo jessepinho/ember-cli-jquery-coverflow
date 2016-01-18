@@ -6,9 +6,9 @@
 #copy-code-button.mdl-button--fab
   background-color: unquote("rgb(#{$color-primary})")
   color: unquote("rgb(#{$color-white})")
-  margin-top: -27px // TODO: Use a variable
+  margin-top: -($button-fab-size / 2) - $grid-phone-gutter
   position: absolute
-  right: -27px // TODO: Use a variable
+  right: -($button-fab-size / 2)
   transition: background-color .35s
   z-index: 1
 
