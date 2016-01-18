@@ -23,7 +23,10 @@
   </header>
 
   <div class="mdl-layout__drawer demo-config">
-    <form>
+    <section class="demo-config-form">
+      <p class="demo-config-form-docs-link">(<a href="http://vanderlee.github.io/coverflow/" target="_blank">docs</a>)</p>
+      <h1>Config options</h1>
+
       <div class="mdl-tooltip" for="enable-click-label">
         Coming to this demo soon!
       </div>
@@ -109,28 +112,32 @@
                 disabled=true}}
         <label class="mdl-textfield__label">index</label>
       </div>
-    </form>
+    </section>
 
-    <div class="mdl-tooltip" for="copy-code-button">
-      Copy code
-    </div>
-    {{#zero-clipboard text="hello, world"
-                      tagName="button"
-                      afterCopy=(action "afterCopy")
-                      cbTarget="demo-code-snippet"
-                      class="mdl-button
-                             mdl-js-button
-                             mdl-button--fab
-                             mdl-js-ripple-effect
-                             mdl-shadow--4dp"
-                      id="copy-code-button"}}
-      <i class="material-icons copy">content_copy</i>
-      <i class="material-icons check">check</i>
-    {{/zero-clipboard}}
+    <section class="demo-code-snippet">
+      <div class="mdl-tooltip" for="copy-code-button">
+        Copy code
+      </div>
+      {{#zero-clipboard text="hello, world"
+                        tagName="button"
+                        afterCopy=(action "afterCopy")
+                        cbTarget="demo-code-snippet-clipboard-target"
+                        class="mdl-button
+                               mdl-js-button
+                               mdl-button--fab
+                               mdl-js-ripple-effect
+                               mdl-shadow--4dp"
+                        id="copy-code-button"}}
+        <i class="material-icons copy">content_copy</i>
+        <i class="material-icons check">check</i>
+      {{/zero-clipboard}}
 
-    <code>
-      <pre id="demo-code-snippet">{{partial "partials/demo-code-snippet"}}</pre>
-    </code>
+      <h1>Copy-pasta</h1>
+
+      <code>
+        <pre id="demo-code-snippet-clipboard-target">{{partial "partials/demo-code-snippet"}}</pre>
+      </code>
+    </section>
   </div>
 
   <main class="mdl-layout__content">

@@ -42,37 +42,50 @@
     height: 100%
     margin: 0
 
+.demo-code-snippet
+  background: unquote("rgb(#{$color-accent})")
+  font-size: .7em
+  line-height: 1.5em
+  padding: $grid-phone-gutter
+  position: relative
+
+  h1
+    @extend p
+    font-weight: bold
+    text-transform: uppercase
+
+  pre
+    margin: 0
+    overflow-x: auto
+
 .demo-config
   display: flex
   flex-direction: column
   overflow-y: visible // Otherwise, the copy button gets cut off
 
-  code
-    background: unquote("rgb(#{$color-accent})")
-    font-size: .7em
-    line-height: 1.5em
-    padding: $grid-phone-gutter
-    position: relative
-
-    pre
-      margin: 0
-      overflow-x: auto
-
-  form
-    flex:
-      grow: 1
-      shrink: 1
-    overflow-y: auto
-    padding: $grid-phone-gutter
-
-    @media (min-width: $grid-tablet-breakpoint)
-      padding: $grid-tablet-gutter
-
-    @media (min-width: $grid-desktop-breakpoint)
-      padding: $grid-desktop-gutter
-
   .mdl-switch
     margin-bottom: $input-text-vertical-spacing
+
+.demo-config-form
+  flex:
+    grow: 1
+    shrink: 1
+  overflow-y: auto
+  padding: $grid-phone-gutter
+
+  h1
+    @extend p
+    font-weight: bold
+    text-transform: uppercase
+
+  @media (min-width: $grid-tablet-breakpoint)
+    padding: $grid-tablet-gutter
+
+  @media (min-width: $grid-desktop-breakpoint)
+    padding: $grid-desktop-gutter
+
+.demo-config-form-docs-link
+  float: right
 
 .header-link
   margin-left: 2em
