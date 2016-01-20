@@ -29,7 +29,31 @@ Example:
 {{/jquery-coverflow}}
 ```
 
-To configure and test jQuery Coverflow in an Ember environment, see the [interactive demo](http://jessepinho.github.io/ember-cli-jquery-coverflow/).
+You can also pass a callback for the `animateComplete`, `animateStep`, `change`, `confirm`, and `select` events (again, see [the docs](http://vanderlee.github.io/coverflow/) for more detail):
+
+```Handlebars
+{{! app/templates/application.hbs }}
+
+{{#jquery-coverflow select=selectCallback}}
+  {{! ... }}
+{{/jquery-coverflow}}
+```
+
+```JavaScript
+// app/controllers/application.js
+
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  selectCallback: Ember.computed(function() {
+    return function(event, cover, index) {
+      this.set('currentCoverIndex', index);
+    };
+  })
+});
+```
+
+(Note: This pattern of returning a function from a property is a little awkward, and should probably be an action instead. See [issue #1](https://github.com/jessepinho/ember-cli-jquery-coverflow/issues/1).)
 
 ## Building
 
