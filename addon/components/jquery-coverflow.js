@@ -26,6 +26,10 @@ export default Ember.Component.extend({
     Ember.$(this.get('element')).coverflow(this.get('_options'));
   },
 
+  _emitInit: Ember.on('init', function() {
+    this.sendAction('onInit', this);
+  }),
+
   _refresh: Ember.observer('observeForRefresh', function() {
     Ember.run.next(() => {
       Ember.$(this.get('element')).coverflow('refresh');
@@ -46,5 +50,17 @@ export default Ember.Component.extend({
     var $element = Ember.$(this.get('element'));
     $element.coverflow('destroy');
     $element.coverflow(this.get('_options'));
-  })
+  }),
+
+  actions: {
+    call(method, value) {
+      console.log(`calling coverflow with ${method}: ${value}`);
+      if (Ember.typeOf(value) === 'undefined') {
+        $element.coverflow(method);
+      } else {
+        console.log(`calling coverflow with ${method}: ${value}`);
+        $element.coverflow(method, value);
+      }
+    }
+  }
 });
