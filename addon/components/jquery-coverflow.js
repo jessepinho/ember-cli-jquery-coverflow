@@ -31,12 +31,14 @@ export default Ember.Component.extend({
   }),
 
   _refresh: Ember.observer('observeForRefresh', function() {
+    console.log('_refresh');
     Ember.run.next(() => {
       Ember.$(this.get('element')).coverflow('refresh');
     });
   }),
 
   _options: Ember.computed(optionNames.join(','), function() {
+    console.log('_options');
     var options = {};
     optionNames.forEach((option) => {
       if (Ember.typeOf(this.get(option)) !== 'undefined') {
@@ -46,21 +48,14 @@ export default Ember.Component.extend({
     return options;
   }),
 
-  _setOption: Ember.observer(optionNames.join(','), function(sender, key) {
+  _setOption: Ember.observer(optionNames.join(','), function() {
+    console.log('_setOption');
     var $element = Ember.$(this.get('element'));
     $element.coverflow('destroy');
     $element.coverflow(this.get('_options'));
   }),
 
-  actions: {
-    call(method, value) {
-      console.log(`calling coverflow with ${method}: ${value}`);
-      if (Ember.typeOf(value) === 'undefined') {
-        $element.coverflow(method);
-      } else {
-        console.log(`calling coverflow with ${method}: ${value}`);
-        $element.coverflow(method, value);
-      }
-    }
-  }
+  _setCurrentIndex: Ember.observer('currentIndex', function() {
+    Ember.$(this.get('element')).coverflow('index', this.get('currentIndex'));
+  })
 });
